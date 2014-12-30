@@ -7,8 +7,9 @@
 
 Summary:    Official JDBC driver for MySQL
 Name:       mysql-connector-java
-Version:    5.1.26
-Release:    2.0%{?dist}
+Version:    5.1.28
+Release:    4.1
+Group:      Databases
 Epoch:      1 
 
 # MySQL FLOSS Exception
@@ -93,7 +94,6 @@ rm src/testsuite/simple/jdbc4/StatementsTest.java
 ant -DbuildDir=%{builddir} -DdistDir=%{distdir} -Dcom.mysql.jdbc.java6.rtjar=%{java6_rtpath} -Dcom.mysql.jdbc.java6.javac=%{java6_javacpath} -Dcom.mysql.jdbc.java6.java=%{java6_javapath}
 
 %install
-rm -rf $RPM_BUILD_ROOT
 
 install -d -m 755 $RPM_BUILD_ROOT%{_javadir}
 install -m 644 %{builddir}/%{name}-%{version}-SNAPSHOT/%{name}-%{version}-SNAPSHOT-bin.jar \
@@ -109,7 +109,7 @@ sed -i 's/>@.*</>%{version}</' $RPM_BUILD_ROOT%{_mavenpomdir}/JPP-%{name}.pom
 %files
 %doc CHANGES COPYING docs
 %{_javadir}/*.jar
-%config(noreplace) %{_mavendepmapfragdir}/*
+%{_datadir}/maven-metadata/*
 %{_mavenpomdir}/*.pom
 
 %changelog

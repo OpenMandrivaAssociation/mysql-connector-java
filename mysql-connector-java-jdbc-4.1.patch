@@ -1,6 +1,6 @@
-diff -up mysql-connector-java-5.1.26/src/com/mysql/jdbc/CallableStatement.java.p0 mysql-connector-java-5.1.26/src/com/mysql/jdbc/CallableStatement.java
---- mysql-connector-java-5.1.26/src/com/mysql/jdbc/CallableStatement.java.p0	2013-07-24 02:07:01.000000000 +0200
-+++ mysql-connector-java-5.1.26/src/com/mysql/jdbc/CallableStatement.java	2013-10-23 10:44:56.692452869 +0200
+diff -up --recursive mysql-connector-java-5.1.28.orig/src/com/mysql/jdbc/CallableStatement.java mysql-connector-java-5.1.28/src/com/mysql/jdbc/CallableStatement.java
+--- mysql-connector-java-5.1.28.orig/src/com/mysql/jdbc/CallableStatement.java	2013-11-28 08:39:32.000000000 +0100
++++ mysql-connector-java-5.1.28/src/com/mysql/jdbc/CallableStatement.java	2014-01-23 15:09:10.975010181 +0100
 @@ -31,11 +31,15 @@ import java.net.URL;
  import java.sql.Array;
  import java.sql.Blob;
@@ -35,101 +35,101 @@ diff -up mysql-connector-java-5.1.26/src/com/mysql/jdbc/CallableStatement.java.p
  			}
  		}
  	}
-+	
++
 +	@Override
 +	public void setNClob(String parameterName, NClob value) throws SQLException {
 +		throw new SQLFeatureNotSupportedException("Not supported");
 +	}
-+	
++
 +	@Override
 +	public void setNClob(String parameterName, Reader reader, long length) throws SQLException {
 +		throw new SQLFeatureNotSupportedException("Not supported");
 +	}
-+	
++
 +	@Override
 +	public void setNClob(String parameterName, Reader reader) throws SQLException {
 +		throw new SQLFeatureNotSupportedException("Not supported");
 +	}
-+	
++
 +	@Override
 +	public java.io.Reader getCharacterStream(int parameterIndex) throws SQLException {
 +		throw new SQLFeatureNotSupportedException("Not supported");
 +	}
-+	
++
 +	@Override
 +	public java.io.Reader getCharacterStream(String parameterName) throws SQLException {
 +		throw new SQLFeatureNotSupportedException("Not supported");
 +	}
-+	
++
 +	@Override
 +	public java.io.Reader getNCharacterStream(int parameterIndex) throws SQLException {
 +		throw new SQLFeatureNotSupportedException("Not supported");
 +	}
-+	
++
 +	@Override
 +	public java.io.Reader getNCharacterStream(String parameterName) throws SQLException {
 +		throw new SQLFeatureNotSupportedException("Not supported");
 +	}
-+	
++
 +	@Override
 +	public String getNString(int parameterIndex) throws SQLException {
 +		throw new SQLFeatureNotSupportedException("Not supported");
 +	}
-+	
++
 +	@Override
 +	public String getNString(String parameterName) throws SQLException {
 +		throw new SQLFeatureNotSupportedException("Not supported");
 +	}
-+	
++
 +	@Override
 +	public SQLXML getSQLXML(int parameterIndex) throws SQLException {
 +		throw new SQLFeatureNotSupportedException("Not supported");
 +	}
-+	
++
 +	@Override
 +	public SQLXML getSQLXML(String parameterName) throws SQLException {
 +		throw new SQLFeatureNotSupportedException("Not supported");
 +	}
-+	
++
 +	@Override
 +	public void setSQLXML(String parameterName, SQLXML xmlObject) throws SQLException {
 +		throw new SQLFeatureNotSupportedException("Not supported");
 +	}
-+	
++
 +	@Override
 +	public NClob getNClob (int parameterName) throws SQLException {
 +		throw new SQLFeatureNotSupportedException("Not supported");
 +	}
-+	
++
 +	@Override
 +	public NClob getNClob (String parameterName) throws SQLException {
 +		throw new SQLFeatureNotSupportedException("Not supported");
 +	}
-+	
++
 +	@Override
 +	public void setNString(String parameterName, String value) throws SQLException {
 +		throw new SQLFeatureNotSupportedException("Not supported");
 +	}
-+	
++
 +	@Override
 +	public void setRowId(String parameterName, RowId x) throws SQLException {
 +		throw new SQLFeatureNotSupportedException("Not supported");
 +	}
-+	
++
 +	@Override
 +	public RowId getRowId(int parameterIndex) throws SQLException {
 +		throw new SQLFeatureNotSupportedException("Not supported");
 +	}
-+	
++
 +	@Override
 +	public RowId getRowId(String parameterName) throws SQLException {
 +		throw new SQLFeatureNotSupportedException("Not supported");
 +	}
 +
  }
-diff -up mysql-connector-java-5.1.26/src/com/mysql/jdbc/ConnectionImpl.java.p0 mysql-connector-java-5.1.26/src/com/mysql/jdbc/ConnectionImpl.java
---- mysql-connector-java-5.1.26/src/com/mysql/jdbc/ConnectionImpl.java.p0	2013-07-24 02:07:01.000000000 +0200
-+++ mysql-connector-java-5.1.26/src/com/mysql/jdbc/ConnectionImpl.java	2013-10-23 10:44:56.694452864 +0200
+diff -up --recursive mysql-connector-java-5.1.28.orig/src/com/mysql/jdbc/ConnectionImpl.java mysql-connector-java-5.1.28/src/com/mysql/jdbc/ConnectionImpl.java
+--- mysql-connector-java-5.1.28.orig/src/com/mysql/jdbc/ConnectionImpl.java	2013-11-28 08:39:32.000000000 +0100
++++ mysql-connector-java-5.1.28/src/com/mysql/jdbc/ConnectionImpl.java	2014-01-23 15:09:10.976010181 +0100
 @@ -34,11 +34,16 @@ import java.nio.charset.Charset;
  import java.nio.charset.CharsetEncoder;
  import java.sql.Blob;
@@ -147,82 +147,82 @@ diff -up mysql-connector-java-5.1.26/src/com/mysql/jdbc/ConnectionImpl.java.p0 m
  import java.util.ArrayList;
  import java.util.Calendar;
  import java.util.Collections;
-@@ -6107,4 +6112,71 @@ public class ConnectionImpl extends Conn
+@@ -6123,4 +6128,71 @@ public class ConnectionImpl extends Conn
  			return getSocketTimeout();
  		}
  	}
-+	
++
 +	@Override
 +	public Struct createStruct(String typeName, Object[] attributes) throws SQLException {
 +		throw new SQLFeatureNotSupportedException("Not supported");
 +	}
-+	
++
 +	@Override
 +	public java.sql.Array createArrayOf(String typeName, Object[] elements) throws SQLException {
 +		throw new SQLFeatureNotSupportedException("Not supported");
 +	}
-+	
++
 +	@Override
 +	public String getClientInfo(String name) throws SQLException {
 +		throw new SQLFeatureNotSupportedException("Not supported");
 +	}
-+	
++
 +	@Override
 +	public Properties getClientInfo() throws SQLException {
 +		throw new SQLFeatureNotSupportedException("Not supported");
 +	}
-+	
++
 +	@Override
 +	public void setClientInfo(String name, String value)
 +	throws SQLClientInfoException {
 +		//throw new SQLFeatureNotSupportedException("Not supported");
 +	}
-+	
++
 +	@Override
 +	public void setClientInfo(Properties properties) throws SQLClientInfoException {
 +		//throw new SQLFeatureNotSupportedException("Not supported");
 +	}
-+	
++
 +	@Override
 +	public boolean isValid(int timeout) throws SQLException {
 +		throw new SQLFeatureNotSupportedException("Not supported");
 +	}
-+	
++
 +	@Override
 +	public SQLXML createSQLXML() throws SQLException {
 +		throw new SQLFeatureNotSupportedException("Not supported");
 +	}
-+	
++
 +	@Override
 +	public NClob createNClob() throws SQLException {
 +		throw new SQLFeatureNotSupportedException("Not supported");
 +	}
-+	
++
 +	@Override
 +	public Blob createBlob() throws SQLException {
 +		throw new SQLFeatureNotSupportedException("Not supported");
 +	}
-+	
++
 +	@Override
 +	public Clob createClob() throws SQLException {
 +		throw new SQLFeatureNotSupportedException("Not supported");
 +	}
-+	
++
 +	@Override
 +	public boolean isWrapperFor(java.lang.Class<?> iface) throws java.sql.SQLException {
 +		throw new SQLFeatureNotSupportedException("Not supported");
 +	}
-+	
++
 +	@Override
 +	public <T> T unwrap(java.lang.Class<T> iface) throws java.sql.SQLException {
 +		throw new SQLFeatureNotSupportedException("Not supported");
 +	}
-+	
++
  }
-diff -up mysql-connector-java-5.1.26/src/com/mysql/jdbc/DatabaseMetaData.java.p0 mysql-connector-java-5.1.26/src/com/mysql/jdbc/DatabaseMetaData.java
---- mysql-connector-java-5.1.26/src/com/mysql/jdbc/DatabaseMetaData.java.p0	2013-07-24 02:07:01.000000000 +0200
-+++ mysql-connector-java-5.1.26/src/com/mysql/jdbc/DatabaseMetaData.java	2013-10-23 10:56:08.828981428 +0200
-@@ -27,6 +27,8 @@ import java.sql.ResultSet;
+diff -up --recursive mysql-connector-java-5.1.28.orig/src/com/mysql/jdbc/DatabaseMetaData.java mysql-connector-java-5.1.28/src/com/mysql/jdbc/DatabaseMetaData.java
+--- mysql-connector-java-5.1.28.orig/src/com/mysql/jdbc/DatabaseMetaData.java	2013-11-28 08:39:32.000000000 +0100
++++ mysql-connector-java-5.1.28/src/com/mysql/jdbc/DatabaseMetaData.java	2014-01-23 15:09:10.977010181 +0100
+@@ -30,6 +30,8 @@ import java.sql.ResultSet;
  import java.sql.SQLException;
  import java.sql.Statement;
  import java.sql.Types;
@@ -231,35 +231,35 @@ diff -up mysql-connector-java-5.1.26/src/com/mysql/jdbc/DatabaseMetaData.java.p0
  import java.util.ArrayList;
  import java.util.Collections;
  import java.util.HashMap;
-@@ -8694,4 +8696,25 @@ public class DatabaseMetaData implements
+@@ -8854,4 +8856,25 @@ public class DatabaseMetaData implements
              throws SQLException {
  		return true;
  	}
-+	
++
 +	@Override
 +	public boolean autoCommitFailureClosesAllResultSets() throws SQLException {
 +		throw new SQLFeatureNotSupportedException("Not supported");
 +	}
-+	
++
 +	@Override
 +	public RowIdLifetime getRowIdLifetime() throws SQLException {
 +		throw new SQLFeatureNotSupportedException("Not supported");
 +	}
-+	
++
 +	@Override
 +	public boolean isWrapperFor(java.lang.Class<?> iface) throws java.sql.SQLException {
 +		throw new SQLFeatureNotSupportedException("Not supported");
 +	}
-+	
++
 +	@Override
 +	public <T> T unwrap(java.lang.Class<T> iface) throws java.sql.SQLException {
 +		throw new SQLFeatureNotSupportedException("Not supported");
 +	}
 +
  }
-diff -up mysql-connector-java-5.1.26/src/com/mysql/jdbc/Driver.java.p0 mysql-connector-java-5.1.26/src/com/mysql/jdbc/Driver.java
---- mysql-connector-java-5.1.26/src/com/mysql/jdbc/Driver.java.p0	2013-07-24 02:07:01.000000000 +0200
-+++ mysql-connector-java-5.1.26/src/com/mysql/jdbc/Driver.java	2013-10-23 10:44:56.697452857 +0200
+diff -up --recursive mysql-connector-java-5.1.28.orig/src/com/mysql/jdbc/Driver.java mysql-connector-java-5.1.28/src/com/mysql/jdbc/Driver.java
+--- mysql-connector-java-5.1.28.orig/src/com/mysql/jdbc/Driver.java	2013-11-28 08:39:32.000000000 +0100
++++ mysql-connector-java-5.1.28/src/com/mysql/jdbc/Driver.java	2014-01-23 15:09:10.977010181 +0100
 @@ -26,6 +26,8 @@
  package com.mysql.jdbc;
  
@@ -279,535 +279,9 @@ diff -up mysql-connector-java-5.1.26/src/com/mysql/jdbc/Driver.java.p0 mysql-con
 +		throw new SQLFeatureNotSupportedException("Not supported");
 +	}
  }
-diff -up mysql-connector-java-5.1.26/src/com/mysql/jdbc/jdbc2/optional/CallableStatementWrapper.java.p0 mysql-connector-java-5.1.26/src/com/mysql/jdbc/jdbc2/optional/CallableStatementWrapper.java
---- mysql-connector-java-5.1.26/src/com/mysql/jdbc/jdbc2/optional/CallableStatementWrapper.java.p0	2013-07-24 02:07:01.000000000 +0200
-+++ mysql-connector-java-5.1.26/src/com/mysql/jdbc/jdbc2/optional/CallableStatementWrapper.java	2013-10-23 10:44:56.698452854 +0200
-@@ -35,8 +35,12 @@ import java.sql.Blob;
- import java.sql.CallableStatement;
- import java.sql.Clob;
- import java.sql.Date;
-+import java.sql.NClob;
- import java.sql.Ref;
-+import java.sql.RowId;
- import java.sql.SQLException;
-+import java.sql.SQLFeatureNotSupportedException;
-+import java.sql.SQLXML;
- import java.sql.Time;
- import java.sql.Timestamp;
- import java.util.Calendar;
-@@ -2636,4 +2640,169 @@ public class CallableStatementWrapper ex
- //		throw SQLError.notImplemented();
- //	}
- 
-+	@Override
-+	public <T> T getObject(int parameterIndex, Class<T> type) throws SQLException {
-+		throw new SQLFeatureNotSupportedException("Not supported");
-+	}
-+	
-+	@Override
-+	public <T> T getObject(String parameterName, Class<T> type) throws SQLException {
-+		throw new SQLFeatureNotSupportedException("Not supported");
-+	}
-+	
-+	@Override
-+	public void setBlob(String parameterName, InputStream inputStream) throws SQLException {
-+		throw new SQLFeatureNotSupportedException("Not supported");
-+	}
-+	
-+	@Override
-+	public void setClob(String parameterName, Reader reader) throws SQLException {
-+		throw new SQLFeatureNotSupportedException("Not supported");
-+	}
-+	
-+	@Override
-+	public void setNCharacterStream(String parameterName, Reader value) throws SQLException{
-+		throw new SQLFeatureNotSupportedException("Not supported");
-+	}
-+	
-+	@Override
-+	public void setCharacterStream(String parameterName, java.io.Reader reader) throws SQLException {
-+		throw new SQLFeatureNotSupportedException("Not supported");
-+	}
-+	
-+	@Override
-+	public void setBinaryStream(String parameterName, java.io.InputStream x) throws SQLException {
-+    	throw new SQLFeatureNotSupportedException("Not supported");
-+    }
-+    
-+	@Override
-+	public void setAsciiStream(String parameterName, java.io.InputStream x) throws SQLException {
-+		throw new SQLFeatureNotSupportedException("Not supported");
-+	}
-+	
-+	@Override
-+	public void setCharacterStream(String parameterName, java.io.Reader reader, long length) throws SQLException {
-+		throw new SQLFeatureNotSupportedException("Not supported");
-+	}
-+	
-+	@Override
-+	public void setBinaryStream(String parameterName, java.io.InputStream x, long length) throws SQLException {
-+		throw new SQLFeatureNotSupportedException("Not supported");
-+	}
-+	
-+	@Override
-+	public void setAsciiStream(String parameterName, java.io.InputStream x, long length) throws SQLException {
-+		throw new SQLFeatureNotSupportedException("Not supported");
-+	}
-+	
-+	@Override
-+	public void setClob (String parameterName, Clob x) throws SQLException {
-+		throw new SQLFeatureNotSupportedException("Not supported");
-+	}
-+	
-+	@Override
-+	public void setBlob (String parameterName, Blob x) throws SQLException {
-+		throw new SQLFeatureNotSupportedException("Not supported");
-+	}
-+	
-+	@Override
-+	public java.io.Reader getCharacterStream(String parameterName) throws SQLException {
-+		throw new SQLFeatureNotSupportedException("Not supported");
-+	}
-+	
-+	@Override
-+	public java.io.Reader getCharacterStream(int parameterIndex) throws SQLException {
-+		throw new SQLFeatureNotSupportedException("Not supported");
-+	}
-+	
-+	@Override
-+	public java.io.Reader getNCharacterStream(String parameterName) throws SQLException {
-+		throw new SQLFeatureNotSupportedException("Not supported");
-+	}
-+	
-+	@Override
-+	public java.io.Reader getNCharacterStream(int parameterIndex) throws SQLException {
-+		throw new SQLFeatureNotSupportedException("Not supported");
-+	}
-+	
-+	@Override
-+	public String getNString(String parameterName) throws SQLException {
-+		throw new SQLFeatureNotSupportedException("Not supported");
-+	}
-+	
-+	@Override
-+	public String getNString(int parameterIndex) throws SQLException {
-+		throw new SQLFeatureNotSupportedException("Not supported");
-+	}
-+	
-+	@Override
-+	public SQLXML getSQLXML(String parameterName) throws SQLException {
-+		throw new SQLFeatureNotSupportedException("Not supported");
-+	}
-+	
-+	@Override
-+	public SQLXML getSQLXML(int parameterIndex) throws SQLException {
-+		throw new SQLFeatureNotSupportedException("Not supported");
-+	}
-+	
-+	@Override
-+	public void setSQLXML(String parameterName, SQLXML xmlObject) throws SQLException {
-+		throw new SQLFeatureNotSupportedException("Not supported");
-+	}
-+	
-+	@Override
-+	public NClob getNClob (String parameterName) throws SQLException {
-+		throw new SQLFeatureNotSupportedException("Not supported");
-+	}
-+	
-+	@Override
-+	public NClob getNClob (int parameterIndex) throws SQLException {
-+		throw new SQLFeatureNotSupportedException("Not supported");
-+	}
-+	
-+	@Override
-+	public void setNClob(String parameterName, Reader reader, long length) throws SQLException  {
-+		throw new SQLFeatureNotSupportedException("Not supported");
-+	}
-+	
-+	@Override
-+	public void setBlob(String parameterName, InputStream inputStream, long length)	throws SQLException {
-+		throw new SQLFeatureNotSupportedException("Not supported");
-+	}
-+	
-+	@Override
-+	public void setClob(String parameterName, Reader reader, long length) throws SQLException {
-+		throw new SQLFeatureNotSupportedException("Not supported");
-+	}
-+	
-+	@Override
-+	public void setNClob(String parameterName, NClob value) throws SQLException {
-+		throw new SQLFeatureNotSupportedException("Not supported");
-+	}
-+	
-+	@Override
-+	public void setNCharacterStream(String parameterName, Reader value, long length) throws SQLException {
-+		throw new SQLFeatureNotSupportedException("Not supported");
-+	}
-+	
-+	@Override
-+	public void setNString(String parameterName, String value) throws SQLException {
-+		throw new SQLFeatureNotSupportedException("Not supported");
-+	}
-+	
-+	@Override
-+	public void setRowId(String parameterName, RowId x) throws SQLException  {
-+		throw new SQLFeatureNotSupportedException("Not supported");
-+	}
-+	
-+	@Override
-+	public RowId getRowId(String parameterName) throws SQLException {
-+		throw new SQLFeatureNotSupportedException("Not supported");
-+	}
-+	
-+	@Override
-+	public RowId getRowId(int parameterIndex) throws SQLException {
-+		throw new SQLFeatureNotSupportedException("Not supported");
-+	}
-+
- }
-diff -up mysql-connector-java-5.1.26/src/com/mysql/jdbc/jdbc2/optional/ConnectionWrapper.java.p0 mysql-connector-java-5.1.26/src/com/mysql/jdbc/jdbc2/optional/ConnectionWrapper.java
---- mysql-connector-java-5.1.26/src/com/mysql/jdbc/jdbc2/optional/ConnectionWrapper.java.p0	2013-07-24 02:07:01.000000000 +0200
-+++ mysql-connector-java-5.1.26/src/com/mysql/jdbc/jdbc2/optional/ConnectionWrapper.java	2013-10-23 10:44:56.699452852 +0200
-@@ -26,8 +26,15 @@
- package com.mysql.jdbc.jdbc2.optional;
- 
- import java.lang.reflect.Constructor;
-+import java.sql.Blob;
-+import java.sql.Clob;
-+import java.sql.NClob;
- import java.sql.SQLException;
-+import java.sql.SQLXML;
- import java.sql.Savepoint;
-+import java.sql.SQLClientInfoException;
-+import java.sql.SQLFeatureNotSupportedException;
-+import java.sql.Struct;
- import java.sql.Statement;
- import java.util.Map;
- import java.util.Properties;
-@@ -2845,4 +2852,68 @@ public class ConnectionWrapper extends W
- 	public String getConnectionAttributes() throws SQLException {
- 		return this.mc.getConnectionAttributes();
- 	}
--}
-\ No newline at end of file
-+	@Override
-+	public Struct createStruct(String typeName, Object[] attributes) throws SQLException {
-+		throw new SQLFeatureNotSupportedException("Not supported");
-+	}
-+	
-+	@Override
-+	public java.sql.Array createArrayOf(String typeName, Object[] elements) throws SQLException {
-+		throw new SQLFeatureNotSupportedException("Not supported");
-+	}
-+	
-+	@Override
-+	public String getClientInfo(String name) throws SQLException {
-+		throw new SQLFeatureNotSupportedException("Not supported");
-+	}
-+	
-+	@Override
-+	public Properties getClientInfo() throws SQLException {
-+		throw new SQLFeatureNotSupportedException("Not supported");
-+	}
-+	@Override
-+	public void setClientInfo(String name, String value) throws SQLClientInfoException {
-+		//throw new SQLFeatureNotSupportedException("Not supported");
-+	}
-+	
-+	@Override
-+	public void setClientInfo(Properties properties) throws SQLClientInfoException {
-+		//throw new SQLFeatureNotSupportedException("Not supported");
-+	}
-+	
-+	@Override
-+	public boolean isValid(int timeout) throws SQLException {
-+		throw new SQLFeatureNotSupportedException("Not supported");
-+	}
-+	
-+	@Override
-+	public SQLXML createSQLXML() throws SQLException {
-+		throw new SQLFeatureNotSupportedException("Not supported");
-+	}
-+	
-+	@Override
-+	public NClob createNClob() throws SQLException {
-+		throw new SQLFeatureNotSupportedException("Not supported");
-+	}
-+	
-+	@Override
-+	public Blob createBlob() throws SQLException {
-+		throw new SQLFeatureNotSupportedException("Not supported");
-+	}
-+	
-+	@Override
-+	public Clob createClob() throws SQLException {
-+		throw new SQLFeatureNotSupportedException("Not supported");
-+	}
-+	
-+	@Override
-+	public boolean isWrapperFor(java.lang.Class<?> iface) throws java.sql.SQLException {
-+		throw new SQLFeatureNotSupportedException("Not supported");
-+	}
-+	
-+	@Override
-+	public <T> T unwrap(java.lang.Class<T> iface) throws java.sql.SQLException {
-+		throw new SQLFeatureNotSupportedException("Not supported");
-+	}
-+
-+}
-diff -up mysql-connector-java-5.1.26/src/com/mysql/jdbc/jdbc2/optional/MysqlDataSource.java.p0 mysql-connector-java-5.1.26/src/com/mysql/jdbc/jdbc2/optional/MysqlDataSource.java
---- mysql-connector-java-5.1.26/src/com/mysql/jdbc/jdbc2/optional/MysqlDataSource.java.p0	2013-07-24 02:07:01.000000000 +0200
-+++ mysql-connector-java-5.1.26/src/com/mysql/jdbc/jdbc2/optional/MysqlDataSource.java	2013-10-23 10:44:56.699452852 +0200
-@@ -28,8 +28,10 @@ package com.mysql.jdbc.jdbc2.optional;
- import java.io.PrintWriter;
- import java.io.Serializable;
- import java.sql.SQLException;
-+import java.sql.SQLFeatureNotSupportedException;
- import java.util.Iterator;
- import java.util.Properties;
-+import java.util.logging.Logger;
- 
- import javax.naming.NamingException;
- import javax.naming.Reference;
-@@ -450,4 +452,19 @@ public class MysqlDataSource extends Con
- //	public <T> T unwrap(Class<T> iface) throws SQLException {
- //		throw SQLError.notImplemented();
- //	}
-+
-+	@Override
-+	public Logger getParentLogger() throws SQLFeatureNotSupportedException {
-+		throw new SQLFeatureNotSupportedException("Not supported");
-+	}
-+	
-+	@Override
-+	public <T> T unwrap(java.lang.Class<T> iface) throws java.sql.SQLException {
-+		throw new SQLFeatureNotSupportedException("Not supported");
-+	}
-+	
-+	@Override
-+	public boolean isWrapperFor(java.lang.Class<?> iface) throws java.sql.SQLException {
-+		throw new SQLFeatureNotSupportedException("Not supported");
-+	}
- }
-diff -up mysql-connector-java-5.1.26/src/com/mysql/jdbc/jdbc2/optional/MysqlPooledConnection.java.p0 mysql-connector-java-5.1.26/src/com/mysql/jdbc/jdbc2/optional/MysqlPooledConnection.java
---- mysql-connector-java-5.1.26/src/com/mysql/jdbc/jdbc2/optional/MysqlPooledConnection.java.p0	2013-07-24 02:07:01.000000000 +0200
-+++ mysql-connector-java-5.1.26/src/com/mysql/jdbc/jdbc2/optional/MysqlPooledConnection.java	2013-10-23 10:44:56.700452849 +0200
-@@ -27,6 +27,7 @@ package com.mysql.jdbc.jdbc2.optional;
- import java.lang.reflect.Constructor;
- import java.sql.Connection;
- import java.sql.SQLException;
-+import java.sql.SQLFeatureNotSupportedException;
- import java.util.HashMap;
- import java.util.Iterator;
- import java.util.Map;
-@@ -34,6 +35,7 @@ import java.util.Map;
- import javax.sql.ConnectionEvent;
- import javax.sql.ConnectionEventListener;
- import javax.sql.PooledConnection;
-+import javax.sql.StatementEventListener;
- 
- import com.mysql.jdbc.ExceptionInterceptor;
- import com.mysql.jdbc.SQLError;
-@@ -254,4 +256,13 @@ public class MysqlPooledConnection imple
- 	protected ExceptionInterceptor getExceptionInterceptor() {
- 		return this.exceptionInterceptor;
- 	}
--}
-\ No newline at end of file
-+
-+	@Override
-+	public void addStatementEventListener(StatementEventListener listener) {
-+        }
-+
-+	@Override
-+	public void removeStatementEventListener(StatementEventListener listener) {
-+        }
-+
-+}
-diff -up mysql-connector-java-5.1.26/src/com/mysql/jdbc/jdbc2/optional/PreparedStatementWrapper.java.p0 mysql-connector-java-5.1.26/src/com/mysql/jdbc/jdbc2/optional/PreparedStatementWrapper.java
---- mysql-connector-java-5.1.26/src/com/mysql/jdbc/jdbc2/optional/PreparedStatementWrapper.java.p0	2013-07-24 02:07:01.000000000 +0200
-+++ mysql-connector-java-5.1.26/src/com/mysql/jdbc/jdbc2/optional/PreparedStatementWrapper.java	2013-10-23 10:44:56.700452849 +0200
-@@ -34,12 +34,16 @@ import java.sql.Array;
- import java.sql.Blob;
- import java.sql.Clob;
- import java.sql.Date;
-+import java.sql.NClob;
- import java.sql.ParameterMetaData;
- import java.sql.PreparedStatement;
- import java.sql.Ref;
- import java.sql.ResultSet;
- import java.sql.ResultSetMetaData;
-+import java.sql.RowId;
- import java.sql.SQLException;
-+import java.sql.SQLFeatureNotSupportedException;
-+import java.sql.SQLXML;
- import java.sql.Time;
- import java.sql.Timestamp;
- import java.util.Calendar;
-@@ -1240,4 +1244,107 @@ public class PreparedStatementWrapper ex
- //	public Object unwrap(Class arg0) throws SQLException {
- //		throw SQLError.notImplemented();
- //	}
-+
-+	public void setNClob(String parameterName, NClob value) throws SQLException {
-+		throw new SQLFeatureNotSupportedException("Not supported");
-+	}
-+	
-+	public void setNClob(String parameterName, Reader reader, long length) throws SQLException {
-+		throw new SQLFeatureNotSupportedException("Not supported");
-+	}
-+	
-+	public void setNClob(String parameterName, Reader reader) throws SQLException {
-+		throw new SQLFeatureNotSupportedException("Not supported");
-+	}
-+	
-+	@Override
-+	public void setNClob(int parameterName, NClob value) throws SQLException {
-+		throw new SQLFeatureNotSupportedException("Not supported");
-+	}
-+	
-+	@Override
-+	public void setNClob(int parameterName, Reader reader, long length) throws SQLException {
-+		throw new SQLFeatureNotSupportedException("Not supported");
-+	}
-+	
-+	@Override
-+	public void setNClob(int parameterName, Reader reader) throws SQLException {
-+		throw new SQLFeatureNotSupportedException("Not supported");
-+	}
-+	
-+	@Override
-+	public void setBlob(int parameterIndex, InputStream inputStream) throws SQLException {
-+		throw new SQLFeatureNotSupportedException("Not supported");
-+	}
-+	
-+	@Override
-+	public void setClob(int parameterIndex, Reader reader) throws SQLException{
-+		throw new SQLFeatureNotSupportedException("Not supported");
-+	}
-+	
-+	@Override
-+	public void setNCharacterStream(int parameterIndex, Reader value) throws SQLException{
-+		throw new SQLFeatureNotSupportedException("Not supported");
-+	}
-+	
-+	@Override
-+	public void setCharacterStream(int parameterIndex, java.io.Reader reader) throws SQLException {
-+		throw new SQLFeatureNotSupportedException("Not supported");
-+	}
-+	
-+	@Override
-+	public void setBinaryStream(int parameterIndex, java.io.InputStream x) throws SQLException {
-+		throw new SQLFeatureNotSupportedException("Not supported");
-+	}
-+	
-+	@Override
-+	public void setAsciiStream(int parameterIndex, java.io.InputStream x) throws SQLException{
-+		throw new SQLFeatureNotSupportedException("Not supported");
-+	}
-+	
-+	@Override
-+	public void setCharacterStream(int parameterIndex, java.io.Reader reader, long length) throws SQLException{
-+		throw new SQLFeatureNotSupportedException("Not supported");
-+	}
-+	
-+	@Override
-+	public void setBinaryStream(int parameterIndex, java.io.InputStream x, long length) throws SQLException {
-+		throw new SQLFeatureNotSupportedException("Not supported");
-+	}
-+	
-+	@Override
-+	public void setAsciiStream(int parameterIndex, java.io.InputStream x, long length) throws SQLException {
-+		throw new SQLFeatureNotSupportedException("Not supported");
-+	}
-+	
-+	@Override
-+	public void setSQLXML(int parameterIndex, SQLXML xmlObject) throws SQLException {
-+		throw new SQLFeatureNotSupportedException("Not supported");
-+	}
-+	
-+	@Override
-+	public void setBlob(int parameterIndex, InputStream inputStream, long length) throws SQLException{
-+		throw new SQLFeatureNotSupportedException("Not supported");
-+	}
-+	
-+	@Override
-+	public void setClob(int parameterIndex, Reader reader, long length) throws SQLException {
-+		throw new SQLFeatureNotSupportedException("Not supported");
-+	}
-+	
-+	@Override
-+	public void setNCharacterStream(int parameterIndex, Reader value, long length) throws SQLException {
-+		throw new SQLFeatureNotSupportedException("Not supported");
-+	}
-+	
-+	@Override
-+	public void setNString(int parameterIndex, String value) throws SQLException{
-+		throw new SQLFeatureNotSupportedException("Not supported");
-+	}
-+	
-+	@Override
-+	public void setRowId(int parameterIndex, RowId x) throws SQLException {
-+		throw new SQLFeatureNotSupportedException("Not supported");
-+	}
-+
- }
-diff -up mysql-connector-java-5.1.26/src/com/mysql/jdbc/jdbc2/optional/StatementWrapper.java.p0 mysql-connector-java-5.1.26/src/com/mysql/jdbc/jdbc2/optional/StatementWrapper.java
---- mysql-connector-java-5.1.26/src/com/mysql/jdbc/jdbc2/optional/StatementWrapper.java.p0	2013-07-24 02:07:01.000000000 +0200
-+++ mysql-connector-java-5.1.26/src/com/mysql/jdbc/jdbc2/optional/StatementWrapper.java	2013-10-23 10:44:56.701452847 +0200
-@@ -29,6 +29,7 @@ import java.lang.reflect.Constructor;
- import java.sql.Connection;
- import java.sql.ResultSet;
- import java.sql.SQLException;
-+import java.sql.SQLFeatureNotSupportedException;
- import java.sql.SQLWarning;
- import java.sql.Statement;
- 
-@@ -866,4 +867,41 @@ public class StatementWrapper extends Wr
- 			checkAndFireConnectionError(sqlEx);
- 		}
- 	}
-+	
-+	@Override
-+	public boolean isCloseOnCompletion() throws SQLException {
-+		throw new SQLFeatureNotSupportedException("Not supported");
-+	}
-+	
-+	@Override
-+	public void closeOnCompletion() throws SQLException {
-+		throw new SQLFeatureNotSupportedException("Not supported");
-+	}
-+	
-+	@Override
-+	public boolean isPoolable()  throws SQLException{
-+		throw new SQLFeatureNotSupportedException("Not supported");
-+	}
-+	
-+	@Override
-+	public void setPoolable(boolean poolable) throws SQLException{
-+		throw new SQLFeatureNotSupportedException("Not supported");
-+	}
-+	
-+	@Override
-+	public boolean isClosed() throws SQLException{
-+		throw new SQLFeatureNotSupportedException("Not supported");
-+	}
-+	
-+	@Override
-+	public boolean isWrapperFor(java.lang.Class<?> iface) throws java.sql.SQLException {
-+		throw new SQLFeatureNotSupportedException("Not supported");
-+	}
-+	
-+	@Override
-+	public <T> T unwrap(java.lang.Class<T> iface) throws java.sql.SQLException {
-+		throw new SQLFeatureNotSupportedException("Not supported");
-+	}
-+
-+
- }
-diff -up mysql-connector-java-5.1.26/src/com/mysql/jdbc/JDBC4Connection.java.p0 mysql-connector-java-5.1.26/src/com/mysql/jdbc/JDBC4Connection.java
---- mysql-connector-java-5.1.26/src/com/mysql/jdbc/JDBC4Connection.java.p0	2013-07-24 02:07:01.000000000 +0200
-+++ mysql-connector-java-5.1.26/src/com/mysql/jdbc/JDBC4Connection.java	2013-10-23 10:44:56.701452847 +0200
+diff -up --recursive mysql-connector-java-5.1.28.orig/src/com/mysql/jdbc/JDBC4Connection.java mysql-connector-java-5.1.28/src/com/mysql/jdbc/JDBC4Connection.java
+--- mysql-connector-java-5.1.28.orig/src/com/mysql/jdbc/JDBC4Connection.java	2013-11-28 08:39:32.000000000 +0100
++++ mysql-connector-java-5.1.28/src/com/mysql/jdbc/JDBC4Connection.java	2014-01-23 15:09:10.980010180 +0100
 @@ -28,9 +28,11 @@ import java.sql.Blob;
  import java.sql.Clob;
  import java.sql.SQLClientInfoException;
@@ -856,9 +330,9 @@ diff -up mysql-connector-java-5.1.26/src/com/mysql/jdbc/JDBC4Connection.java.p0 
 +	}
 +
  }
-diff -up mysql-connector-java-5.1.26/src/com/mysql/jdbc/JDBC4LoadBalancedMySQLConnection.java.p0 mysql-connector-java-5.1.26/src/com/mysql/jdbc/JDBC4LoadBalancedMySQLConnection.java
---- mysql-connector-java-5.1.26/src/com/mysql/jdbc/JDBC4LoadBalancedMySQLConnection.java.p0	2013-07-24 02:07:01.000000000 +0200
-+++ mysql-connector-java-5.1.26/src/com/mysql/jdbc/JDBC4LoadBalancedMySQLConnection.java	2013-10-23 10:44:56.701452847 +0200
+diff -up --recursive mysql-connector-java-5.1.28.orig/src/com/mysql/jdbc/JDBC4LoadBalancedMySQLConnection.java mysql-connector-java-5.1.28/src/com/mysql/jdbc/JDBC4LoadBalancedMySQLConnection.java
+--- mysql-connector-java-5.1.28.orig/src/com/mysql/jdbc/JDBC4LoadBalancedMySQLConnection.java	2013-11-28 08:39:32.000000000 +0100
++++ mysql-connector-java-5.1.28/src/com/mysql/jdbc/JDBC4LoadBalancedMySQLConnection.java	2014-01-23 15:09:10.980010180 +0100
 @@ -29,9 +29,11 @@ import java.sql.Blob;
  import java.sql.Clob;
  import java.sql.SQLClientInfoException;
@@ -926,9 +400,9 @@ diff -up mysql-connector-java-5.1.26/src/com/mysql/jdbc/JDBC4LoadBalancedMySQLCo
  	
  	
  }
-diff -up mysql-connector-java-5.1.26/src/com/mysql/jdbc/JDBC4MySQLConnection.java.p0 mysql-connector-java-5.1.26/src/com/mysql/jdbc/JDBC4MySQLConnection.java
---- mysql-connector-java-5.1.26/src/com/mysql/jdbc/JDBC4MySQLConnection.java.p0	2013-07-24 02:07:01.000000000 +0200
-+++ mysql-connector-java-5.1.26/src/com/mysql/jdbc/JDBC4MySQLConnection.java	2013-10-23 10:44:56.701452847 +0200
+diff -up --recursive mysql-connector-java-5.1.28.orig/src/com/mysql/jdbc/JDBC4MySQLConnection.java mysql-connector-java-5.1.28/src/com/mysql/jdbc/JDBC4MySQLConnection.java
+--- mysql-connector-java-5.1.28.orig/src/com/mysql/jdbc/JDBC4MySQLConnection.java	2013-11-28 08:39:32.000000000 +0100
++++ mysql-connector-java-5.1.28/src/com/mysql/jdbc/JDBC4MySQLConnection.java	2014-01-23 15:09:10.980010180 +0100
 @@ -63,11 +63,14 @@ public interface JDBC4MySQLConnection ex
  	
      public <T> T unwrap(java.lang.Class<T> iface) throws java.sql.SQLException;
@@ -947,9 +421,9 @@ diff -up mysql-connector-java-5.1.26/src/com/mysql/jdbc/JDBC4MySQLConnection.jav
  	
  	
  }
-diff -up mysql-connector-java-5.1.26/src/com/mysql/jdbc/LoadBalancedMySQLConnection.java.p0 mysql-connector-java-5.1.26/src/com/mysql/jdbc/LoadBalancedMySQLConnection.java
---- mysql-connector-java-5.1.26/src/com/mysql/jdbc/LoadBalancedMySQLConnection.java.p0	2013-07-24 02:07:01.000000000 +0200
-+++ mysql-connector-java-5.1.26/src/com/mysql/jdbc/LoadBalancedMySQLConnection.java	2013-10-23 10:44:56.702452845 +0200
+diff -up --recursive mysql-connector-java-5.1.28.orig/src/com/mysql/jdbc/LoadBalancedMySQLConnection.java mysql-connector-java-5.1.28/src/com/mysql/jdbc/LoadBalancedMySQLConnection.java
+--- mysql-connector-java-5.1.28.orig/src/com/mysql/jdbc/LoadBalancedMySQLConnection.java	2013-11-28 08:39:32.000000000 +0100
++++ mysql-connector-java-5.1.28/src/com/mysql/jdbc/LoadBalancedMySQLConnection.java	2014-01-23 15:09:10.981010180 +0100
 @@ -29,6 +29,14 @@ import java.sql.SQLException;
  import java.sql.SQLWarning;
  import java.sql.Savepoint;
@@ -1028,9 +502,9 @@ diff -up mysql-connector-java-5.1.26/src/com/mysql/jdbc/LoadBalancedMySQLConnect
  	}
  	
  	public void setParseInfoCacheFactory(String factoryClassname) {
-@@ -2643,4 +2651,66 @@ public class LoadBalancedMySQLConnection
- 	public String getConnectionAttributes() throws SQLException {
- 		return getActiveMySQLConnection().getConnectionAttributes();
+@@ -2673,4 +2681,66 @@ public class LoadBalancedMySQLConnection
+ 		// nothing to do here.
+ 		
  	}
 +
 +	@Override
@@ -1095,9 +569,9 @@ diff -up mysql-connector-java-5.1.26/src/com/mysql/jdbc/LoadBalancedMySQLConnect
 +	}
 +
  }
-diff -up mysql-connector-java-5.1.26/src/com/mysql/jdbc/MysqlParameterMetadata.java.p0 mysql-connector-java-5.1.26/src/com/mysql/jdbc/MysqlParameterMetadata.java
---- mysql-connector-java-5.1.26/src/com/mysql/jdbc/MysqlParameterMetadata.java.p0	2013-07-24 02:07:01.000000000 +0200
-+++ mysql-connector-java-5.1.26/src/com/mysql/jdbc/MysqlParameterMetadata.java	2013-10-23 10:44:56.703452842 +0200
+diff -up --recursive mysql-connector-java-5.1.28.orig/src/com/mysql/jdbc/MysqlParameterMetadata.java mysql-connector-java-5.1.28/src/com/mysql/jdbc/MysqlParameterMetadata.java
+--- mysql-connector-java-5.1.28.orig/src/com/mysql/jdbc/MysqlParameterMetadata.java	2013-11-28 08:39:32.000000000 +0100
++++ mysql-connector-java-5.1.28/src/com/mysql/jdbc/MysqlParameterMetadata.java	2014-01-23 15:09:10.981010180 +0100
 @@ -26,6 +26,7 @@ package com.mysql.jdbc;
  
  import java.sql.ParameterMetaData;
@@ -1120,18 +594,18 @@ diff -up mysql-connector-java-5.1.26/src/com/mysql/jdbc/MysqlParameterMetadata.j
          } catch (ClassCastException cce) {
              throw SQLError.createSQLException("Unable to unwrap to " + iface.toString(), 
              		SQLError.SQL_STATE_ILLEGAL_ARGUMENT, this.exceptionInterceptor);
-diff -up mysql-connector-java-5.1.26/src/com/mysql/jdbc/NonRegisteringDriver.java.p0 mysql-connector-java-5.1.26/src/com/mysql/jdbc/NonRegisteringDriver.java
---- mysql-connector-java-5.1.26/src/com/mysql/jdbc/NonRegisteringDriver.java.p0	2013-07-24 02:07:01.000000000 +0200
-+++ mysql-connector-java-5.1.26/src/com/mysql/jdbc/NonRegisteringDriver.java	2013-10-23 10:44:56.703452842 +0200
+diff -up --recursive mysql-connector-java-5.1.28.orig/src/com/mysql/jdbc/NonRegisteringDriver.java mysql-connector-java-5.1.28/src/com/mysql/jdbc/NonRegisteringDriver.java
+--- mysql-connector-java-5.1.28.orig/src/com/mysql/jdbc/NonRegisteringDriver.java	2013-11-28 08:39:32.000000000 +0100
++++ mysql-connector-java-5.1.28/src/com/mysql/jdbc/NonRegisteringDriver.java	2014-01-23 15:09:10.981010180 +0100
 @@ -33,6 +33,7 @@ import java.lang.ref.ReferenceQueue;
  import java.net.URLDecoder;
  import java.sql.DriverPropertyInfo;
  import java.sql.SQLException;
 +import java.sql.SQLFeatureNotSupportedException;
  import java.util.ArrayList;
+ import java.util.Enumeration;
  import java.util.Iterator;
- import java.util.List;
-@@ -40,6 +41,9 @@ import java.util.Locale;
+@@ -41,6 +42,9 @@ import java.util.Locale;
  import java.util.Properties;
  import java.util.StringTokenizer;
  import java.util.concurrent.ConcurrentHashMap;
@@ -1141,7 +615,7 @@ diff -up mysql-connector-java-5.1.26/src/com/mysql/jdbc/NonRegisteringDriver.jav
  /**
   * The Java SQL framework allows for multiple database drivers. Each driver
   * should supply a class that implements the Driver interface
-@@ -966,4 +970,9 @@ public class NonRegisteringDriver implem
+@@ -1004,4 +1008,9 @@ public class NonRegisteringDriver implem
  			}
  		}
  	}
@@ -1151,9 +625,9 @@ diff -up mysql-connector-java-5.1.26/src/com/mysql/jdbc/NonRegisteringDriver.jav
 +		throw new SQLFeatureNotSupportedException("Not supported");
 +	}
  }
-diff -up mysql-connector-java-5.1.26/src/com/mysql/jdbc/PreparedStatement.java.p0 mysql-connector-java-5.1.26/src/com/mysql/jdbc/PreparedStatement.java
---- mysql-connector-java-5.1.26/src/com/mysql/jdbc/PreparedStatement.java.p0	2013-07-24 02:07:01.000000000 +0200
-+++ mysql-connector-java-5.1.26/src/com/mysql/jdbc/PreparedStatement.java	2013-10-23 10:44:56.705452837 +0200
+diff -up --recursive mysql-connector-java-5.1.28.orig/src/com/mysql/jdbc/PreparedStatement.java mysql-connector-java-5.1.28/src/com/mysql/jdbc/PreparedStatement.java
+--- mysql-connector-java-5.1.28.orig/src/com/mysql/jdbc/PreparedStatement.java	2013-11-28 08:39:32.000000000 +0100
++++ mysql-connector-java-5.1.28/src/com/mysql/jdbc/PreparedStatement.java	2014-01-23 15:09:10.982010180 +0100
 @@ -40,6 +40,7 @@ import java.nio.charset.Charset;
  import java.nio.charset.CharsetEncoder;
  import java.sql.Array;
@@ -1172,7 +646,7 @@ diff -up mysql-connector-java-5.1.26/src/com/mysql/jdbc/PreparedStatement.java.p
  import java.text.ParsePosition;
  import java.text.SimpleDateFormat;
  import java.util.ArrayList;
-@@ -5759,4 +5763,20 @@ public class PreparedStatement extends c
+@@ -5740,4 +5744,20 @@ public class PreparedStatement extends c
  						statementStartPos, sql, "SELECT", "\"'`",
  						"\"'`", false) == -1 && rewritableOdku;
  	}
@@ -1181,21 +655,21 @@ diff -up mysql-connector-java-5.1.26/src/com/mysql/jdbc/PreparedStatement.java.p
 +	public void setSQLXML(int parameterIndex, SQLXML xmlObject) throws SQLException{
 +		throw new SQLFeatureNotSupportedException("Not supported");
 +	}
-+	
++
 +	@Override
 +	public void setNClob(int parameterIndex, NClob value) throws SQLException {
 +		throw new SQLFeatureNotSupportedException("Not supported");
 +	}
-+	
++
 +	@Override
 +	public void setRowId(int parameterIndex, RowId x) throws SQLException {
 +		throw new SQLFeatureNotSupportedException("Not supported");
 +	}
 +
  }
-diff -up mysql-connector-java-5.1.26/src/com/mysql/jdbc/ReplicationConnection.java.p0 mysql-connector-java-5.1.26/src/com/mysql/jdbc/ReplicationConnection.java
---- mysql-connector-java-5.1.26/src/com/mysql/jdbc/ReplicationConnection.java.p0	2013-07-24 02:07:01.000000000 +0200
-+++ mysql-connector-java-5.1.26/src/com/mysql/jdbc/ReplicationConnection.java	2013-10-23 10:44:56.705452837 +0200
+diff -up --recursive mysql-connector-java-5.1.28.orig/src/com/mysql/jdbc/ReplicationConnection.java mysql-connector-java-5.1.28/src/com/mysql/jdbc/ReplicationConnection.java
+--- mysql-connector-java-5.1.28.orig/src/com/mysql/jdbc/ReplicationConnection.java	2013-11-28 08:39:32.000000000 +0100
++++ mysql-connector-java-5.1.28/src/com/mysql/jdbc/ReplicationConnection.java	2014-01-23 15:09:10.983010179 +0100
 @@ -21,6 +21,12 @@
   */
  package com.mysql.jdbc;
@@ -1209,77 +683,77 @@ diff -up mysql-connector-java-5.1.26/src/com/mysql/jdbc/ReplicationConnection.ja
  import java.sql.CallableStatement;
  import java.sql.DatabaseMetaData;
  import java.sql.PreparedStatement;
-@@ -2707,4 +2713,67 @@ public class ReplicationConnection imple
+@@ -2970,4 +2976,67 @@ public class ReplicationConnection imple
  	public String getConnectionAttributes() throws SQLException {
  		return getCurrentConnection().getConnectionAttributes();
  	}
-+	
++
 +	@Override
 +	public Struct createStruct(String typeName, Object[] attributes) throws SQLException {
 +		throw new SQLFeatureNotSupportedException("Not supported");
 +	}
-+	
++
 +	@Override
 +	public java.sql.Array createArrayOf(String typeName, Object[] elements) throws SQLException {
 +		throw new SQLFeatureNotSupportedException("Not supported");
 +	}
-+	
++
 +	@Override
 +	public String getClientInfo(String name) throws SQLException {
 +		throw new SQLFeatureNotSupportedException("Not supported");
 +	}
-+	
++
 +	@Override
 +	public Properties getClientInfo() throws SQLException {
 +		throw new SQLFeatureNotSupportedException("Not supported");
 +	}
-+	
++
 +	@Override
 +	public void setClientInfo(String name, String value)     throws SQLClientInfoException {
 +	}
-+	
++
 +	@Override
 +	public void setClientInfo(Properties properties) throws SQLClientInfoException {
 +	}
-+	
++
 +	@Override
 +	public boolean isValid(int timeout) throws SQLException {
 +		throw new SQLFeatureNotSupportedException("Not supported");
 +	}
-+	
++
 +	@Override
 +	public SQLXML createSQLXML() throws SQLException {
 +		throw new SQLFeatureNotSupportedException("Not supported");
 +	}
-+	
++
 +	@Override
 +	public NClob createNClob() throws SQLException {
 +		throw new SQLFeatureNotSupportedException("Not supported");
 +	}
-+	
++
 +	@Override
 +	public Blob createBlob() throws SQLException {
 +		throw new SQLFeatureNotSupportedException("Not supported");
 +	}
-+	
++
 +	@Override
 +	public Clob createClob() throws SQLException {
 +		throw new SQLFeatureNotSupportedException("Not supported");
 +	}
-+	
++
 +	@Override
 +	public boolean isWrapperFor(java.lang.Class<?> iface) throws java.sql.SQLException {
 +		throw new SQLFeatureNotSupportedException("Not supported");
 +	}
-+	
++
 +	@Override
 +	public <T> T unwrap(java.lang.Class<T> iface) throws java.sql.SQLException {
 +		throw new SQLFeatureNotSupportedException("Not supported");
 +	}
  }
-diff -up mysql-connector-java-5.1.26/src/com/mysql/jdbc/ResultSetImpl.java.p0 mysql-connector-java-5.1.26/src/com/mysql/jdbc/ResultSetImpl.java
---- mysql-connector-java-5.1.26/src/com/mysql/jdbc/ResultSetImpl.java.p0	2013-07-24 02:07:01.000000000 +0200
-+++ mysql-connector-java-5.1.26/src/com/mysql/jdbc/ResultSetImpl.java	2013-10-23 10:44:56.707452833 +0200
+diff -up --recursive mysql-connector-java-5.1.28.orig/src/com/mysql/jdbc/ResultSetImpl.java mysql-connector-java-5.1.28/src/com/mysql/jdbc/ResultSetImpl.java
+--- mysql-connector-java-5.1.28.orig/src/com/mysql/jdbc/ResultSetImpl.java	2013-11-28 08:39:32.000000000 +0100
++++ mysql-connector-java-5.1.28/src/com/mysql/jdbc/ResultSetImpl.java	2014-01-23 15:09:10.984010179 +0100
 @@ -29,6 +29,7 @@ import java.io.ByteArrayInputStream;
  import java.io.IOException;
  import java.io.InputStream;
@@ -1302,7 +776,7 @@ diff -up mysql-connector-java-5.1.26/src/com/mysql/jdbc/ResultSetImpl.java.p0 my
  import java.sql.Time;
  import java.sql.Timestamp;
  import java.sql.Types;
-@@ -8747,4 +8752,258 @@ public class ResultSetImpl implements Re
+@@ -8752,4 +8757,250 @@ public class ResultSetImpl implements Re
  	protected ExceptionInterceptor getExceptionInterceptor() {
  		return this.exceptionInterceptor;
  	}
@@ -1311,260 +785,252 @@ diff -up mysql-connector-java-5.1.26/src/com/mysql/jdbc/ResultSetImpl.java.p0 my
 +	public void updateNClob(int columnIndex, NClob nClob) throws SQLException {
 +		throw new SQLFeatureNotSupportedException("Not supported");
 +	}
-+	
++
 +	@Override
 +	public void updateNClob(String columnLabel,  Reader reader) throws SQLException {
 +		throw new SQLFeatureNotSupportedException("Not supported");
 +	}
-+	
++
 +	@Override
 +	public void updateNClob(int columnIndex,  Reader reader, long length) throws SQLException {
 +		throw new SQLFeatureNotSupportedException("Not supported");
 +	}
-+	
++
 +	@Override
 +	public void updateNClob(String columnLabel,  Reader reader, long length) throws SQLException {
 +		throw new SQLFeatureNotSupportedException("Not supported");
 +	}
-+	
++
 +	@Override
 +	public void updateNClob(int columnIndex,  Reader reader) throws SQLException {
 +		throw new SQLFeatureNotSupportedException("Not supported");
 +	}
-+	
++
 +	@Override
 +	public void updateClob(int columnIndex,  Reader reader) throws SQLException {
 +		throw new SQLFeatureNotSupportedException("Not supported");
 +	}
-+	
++
 +	@Override
 +	public void updateClob(String columnLabel,  Reader reader) throws SQLException {
 +		throw new SQLFeatureNotSupportedException("Not supported");
 +	}
-+	
++
 +	@Override
 +	public void updateClob(int columnIndex,  Reader reader, long length) throws SQLException {
 +		throw new SQLFeatureNotSupportedException("Not supported");
 +	}
-+	
++
 +	@Override
 +	public void updateClob(String columnLabel,  Reader reader, long length) throws SQLException {
 +		throw new SQLFeatureNotSupportedException("Not supported");
 +	}
-+	
++
 +	@Override
 +	public void updateBlob(int columnIndex, InputStream inputStream) throws SQLException {
 +		throw new SQLFeatureNotSupportedException("Not supported");
 +	}
-+	
++
 +	@Override
 +	public void updateBlob(String columnLabel, InputStream inputStream) throws SQLException {
 +		throw new SQLFeatureNotSupportedException("Not supported");
 +	}
-+	
++
 +	@Override
 +	public void updateCharacterStream(String columnLabel, java.io.Reader reader) throws SQLException {
 +		throw new SQLFeatureNotSupportedException("Not supported");
 +	}
-+	
++
 +	@Override
 +	public void updateBinaryStream(String columnLabel, java.io.InputStream x) throws SQLException {
 +		throw new SQLFeatureNotSupportedException("Not supported");
 +	}
-+	
++
 +	@Override
 +	public void updateAsciiStream(String columnLabel, java.io.InputStream x) throws SQLException {
 +		throw new SQLFeatureNotSupportedException("Not supported");
 +	}
-+	
++
 +	@Override
 +	public void updateCharacterStream(int columnIndex, java.io.Reader x) throws SQLException {
 +		throw new SQLFeatureNotSupportedException("Not supported");
 +	}
-+	
++
 +	@Override
 +	public void updateBinaryStream(int columnIndex, java.io.InputStream x) throws SQLException {
 +		throw new SQLFeatureNotSupportedException("Not supported");
 +	}
-+	
-+	
++
 +	@Override
 +	public void updateAsciiStream(int columnIndex, java.io.InputStream x) throws SQLException {
 +		throw new SQLFeatureNotSupportedException("Not supported");
 +	}
-+	
++
 +	@Override
 +	public void updateNCharacterStream(String columnLabel, java.io.Reader reader) throws SQLException {
 +		throw new SQLFeatureNotSupportedException("Not supported");
 +	}
-+	
++
 +	@Override
 +	public void updateNCharacterStream(int columnIndex, java.io.Reader x) throws SQLException {
 +		throw new SQLFeatureNotSupportedException("Not supported");
 +	}
-+	
-+	
++
 +	@Override
 +	public void updateBlob(int columnIndex, InputStream inputStream, long length) throws SQLException {
 +		throw new SQLFeatureNotSupportedException("Not supported");
 +	}
-+	
++
 +	@Override
 +	public void updateBlob(String columnLabel, InputStream inputStream, long length) throws SQLException {
 +		throw new SQLFeatureNotSupportedException("Not supported");
 +	}
-+	
++
 +	@Override
 +	public void updateCharacterStream(String columnLabel, java.io.Reader reader, long length) throws SQLException {
 +		throw new SQLFeatureNotSupportedException("Not supported");
 +	}
-+	
++
 +	@Override
 +	public void updateBinaryStream(String columnLabel, java.io.InputStream x, long length) throws SQLException {
 +		throw new SQLFeatureNotSupportedException("Not supported");
 +	}
-+	
++
 +	@Override
 +	public void updateAsciiStream(String columnLabel, java.io.InputStream x, long length) throws SQLException {
 +		throw new SQLFeatureNotSupportedException("Not supported");
 +	}
-+	
++
 +	@Override
 +	public void updateCharacterStream(int columnIndex, java.io.Reader x, long length) throws SQLException {
 +		throw new SQLFeatureNotSupportedException("Not supported");
 +	}
-+	
++
 +	@Override
 +	public void updateBinaryStream(int columnIndex, java.io.InputStream x, long length) throws SQLException {
 +		throw new SQLFeatureNotSupportedException("Not supported");
 +	}
-+	
-+	
++
 +	@Override
 +	public void updateAsciiStream(int columnIndex, java.io.InputStream x, long length) throws SQLException {
 +		throw new SQLFeatureNotSupportedException("Not supported");
 +	}
-+	
++
 +	@Override
 +	public void updateNCharacterStream(String columnLabel, java.io.Reader reader, long length) throws SQLException {
 +		throw new SQLFeatureNotSupportedException("Not supported");
 +	}
-+	
++
 +	@Override
 +	public void updateNCharacterStream(int columnIndex, java.io.Reader x, long length) throws SQLException {
 +		throw new SQLFeatureNotSupportedException("Not supported");
 +	}
-+	
++
 +	@Override
 +	public java.io.Reader getNCharacterStream(int columnIndex) throws SQLException {
 +		throw new SQLFeatureNotSupportedException("Not supported");
 +	}
-+	
++
 +	@Override
 +	public java.io.Reader getNCharacterStream(String columnIndex) throws SQLException {
 +		throw new SQLFeatureNotSupportedException("Not supported");
 +	}
-+	
++
 +	@Override
 +	public String getNString(int columnIndex) throws SQLException {
 +		throw new SQLFeatureNotSupportedException("Not supported");
 +	}
-+	
++
 +	@Override
 +	public String getNString(String columnIndex) throws SQLException {
 +		throw new SQLFeatureNotSupportedException("Not supported");
 +	}
-+	
++
 +	@Override
 +	public void updateSQLXML(int columnIndex, SQLXML xmlObject) throws SQLException {
 +		throw new SQLFeatureNotSupportedException("Not supported");
 +	}
-+	
++
 +	@Override
 +	public void updateSQLXML(String columnLabel, SQLXML xmlObject) throws SQLException {
 +		throw new SQLFeatureNotSupportedException("Not supported");
 +	}
-+	
++
 +	@Override
 +	public SQLXML getSQLXML(int columnIndex) throws SQLException {
 +		throw new SQLFeatureNotSupportedException("Not supported");
 +	}
-+	
++
 +	@Override
 +	public SQLXML getSQLXML(String columnLabel) throws SQLException {
 +		throw new SQLFeatureNotSupportedException("Not supported");
 +	}
-+	
++
 +	@Override
 +	public NClob getNClob(int columnIndex) throws SQLException {
 +		throw new SQLFeatureNotSupportedException("Not supported");
 +	}
-+	
++
 +	@Override
 +	public NClob getNClob(String columnLabel) throws SQLException {
 +		throw new SQLFeatureNotSupportedException("Not supported");
 +	}
-+	
++
 +	@Override
 +	public void updateNClob(String columnLabel,  NClob nClob) throws SQLException {
 +		throw new SQLFeatureNotSupportedException("Not supported");
 +	}
-+	
++
 +	@Override
 +	public void updateNString(String columnLabel, String nString) throws SQLException {
 +		throw new SQLFeatureNotSupportedException("Not supported");
 +	}
-+	
++
 +	@Override
 +	public void updateNString(int columnLabel, String nString) throws SQLException {
 +		throw new SQLFeatureNotSupportedException("Not supported");
 +	}
-+	
-+	@Override
-+	public boolean isClosed() throws SQLException {
-+		throw new SQLFeatureNotSupportedException("Not supported");
-+	}
-+	
++
 +	@Override
 +	public int getHoldability() throws SQLException {
 +		throw new SQLFeatureNotSupportedException("Not supported");
 +	}
-+	
++
 +	@Override
 +	public void updateRowId(int columnIndex, RowId x) throws SQLException {
 +		throw new SQLFeatureNotSupportedException("Not supported");
 +	}
-+	
++
 +	@Override
 +	public void updateRowId(String columnLabel, RowId x) throws SQLException {
 +		throw new SQLFeatureNotSupportedException("Not supported");
 +	}
-+	
++
 +	@Override
 +	public RowId getRowId(int columnIndex) throws SQLException {
 +		throw new SQLFeatureNotSupportedException("Not supported");
 +	}
-+	
++
 +	@Override
 +	public RowId getRowId(String columnIndex) throws SQLException {
 +		throw new SQLFeatureNotSupportedException("Not supported");
 +	}
-+	
++
 +	@Override
 +	public boolean isWrapperFor(java.lang.Class<?> iface) throws java.sql.SQLException {
 +		throw new SQLFeatureNotSupportedException("Not supported");
 +	}
-+	
++
 +	@Override
 +	public <T> T unwrap(java.lang.Class<T> iface) throws java.sql.SQLException {
 +		throw new SQLFeatureNotSupportedException("Not supported");
 +	}
 +
  }
-diff -up mysql-connector-java-5.1.26/src/com/mysql/jdbc/ResultSetMetaData.java.p0 mysql-connector-java-5.1.26/src/com/mysql/jdbc/ResultSetMetaData.java
---- mysql-connector-java-5.1.26/src/com/mysql/jdbc/ResultSetMetaData.java.p0	2013-07-24 02:07:01.000000000 +0200
-+++ mysql-connector-java-5.1.26/src/com/mysql/jdbc/ResultSetMetaData.java	2013-10-23 10:44:56.708452830 +0200
-@@ -23,7 +23,9 @@
+diff -up --recursive mysql-connector-java-5.1.28.orig/src/com/mysql/jdbc/ResultSetMetaData.java mysql-connector-java-5.1.28/src/com/mysql/jdbc/ResultSetMetaData.java
+--- mysql-connector-java-5.1.28.orig/src/com/mysql/jdbc/ResultSetMetaData.java	2013-11-28 08:39:32.000000000 +0100
++++ mysql-connector-java-5.1.28/src/com/mysql/jdbc/ResultSetMetaData.java	2014-01-23 15:09:10.985010179 +0100
+@@ -21,7 +21,9 @@
   */
  package com.mysql.jdbc;
  
@@ -1574,7 +1040,7 @@ diff -up mysql-connector-java-5.1.26/src/com/mysql/jdbc/ResultSetMetaData.java.p
  import java.sql.Types;
  
  /**
-@@ -849,14 +851,18 @@ public class ResultSetMetaData implement
+@@ -848,14 +850,18 @@ public class ResultSetMetaData implement
       * @throws java.sql.SQLException If no object found that implements the interface 
       * @since 1.6
       */
@@ -1595,9 +1061,9 @@ diff -up mysql-connector-java-5.1.26/src/com/mysql/jdbc/ResultSetMetaData.java.p
 +		throw new SQLFeatureNotSupportedException("Not supported");
 +	}
  }
-diff -up mysql-connector-java-5.1.26/src/com/mysql/jdbc/StatementImpl.java.p0 mysql-connector-java-5.1.26/src/com/mysql/jdbc/StatementImpl.java
---- mysql-connector-java-5.1.26/src/com/mysql/jdbc/StatementImpl.java.p0	2013-07-24 02:07:01.000000000 +0200
-+++ mysql-connector-java-5.1.26/src/com/mysql/jdbc/StatementImpl.java	2013-10-23 10:44:56.709452828 +0200
+diff -up --recursive mysql-connector-java-5.1.28.orig/src/com/mysql/jdbc/StatementImpl.java mysql-connector-java-5.1.28/src/com/mysql/jdbc/StatementImpl.java
+--- mysql-connector-java-5.1.28.orig/src/com/mysql/jdbc/StatementImpl.java	2013-11-28 08:39:32.000000000 +0100
++++ mysql-connector-java-5.1.28/src/com/mysql/jdbc/StatementImpl.java	2014-01-23 15:09:10.986010179 +0100
 @@ -29,6 +29,8 @@ import java.sql.ResultSet;
  import java.sql.SQLException;
  import java.sql.SQLWarning;
@@ -1607,7 +1073,7 @@ diff -up mysql-connector-java-5.1.26/src/com/mysql/jdbc/StatementImpl.java.p0 my
  import java.util.ArrayList;
  import java.util.Calendar;
  import java.util.Collections;
-@@ -2971,16 +2973,16 @@ public class StatementImpl implements St
+@@ -3008,16 +3010,16 @@ public class StatementImpl implements St
       * @throws java.sql.SQLException If no object found that implements the interface
       * @since 1.6
       */
@@ -1627,17 +1093,536 @@ diff -up mysql-connector-java-5.1.26/src/com/mysql/jdbc/StatementImpl.java.p0 my
  
  	protected int findStartOfStatement(String sql) {
  		int statementStartPos = 0;
-@@ -3051,4 +3053,4 @@ public class StatementImpl implements St
- 			return closeOnCompletion;
- 		}
+diff -up --recursive mysql-connector-java-5.1.28.orig/src/com/mysql/jdbc/jdbc2/optional/CallableStatementWrapper.java mysql-connector-java-5.1.28/src/com/mysql/jdbc/jdbc2/optional/CallableStatementWrapper.java
+--- mysql-connector-java-5.1.28.orig/src/com/mysql/jdbc/jdbc2/optional/CallableStatementWrapper.java	2013-11-28 08:39:32.000000000 +0100
++++ mysql-connector-java-5.1.28/src/com/mysql/jdbc/jdbc2/optional/CallableStatementWrapper.java	2014-01-23 15:09:10.978010180 +0100
+@@ -35,8 +35,12 @@ import java.sql.Blob;
+ import java.sql.CallableStatement;
+ import java.sql.Clob;
+ import java.sql.Date;
++import java.sql.NClob;
+ import java.sql.Ref;
++import java.sql.RowId;
+ import java.sql.SQLException;
++import java.sql.SQLFeatureNotSupportedException;
++import java.sql.SQLXML;
+ import java.sql.Time;
+ import java.sql.Timestamp;
+ import java.util.Calendar;
+@@ -2636,4 +2640,169 @@ public class CallableStatementWrapper ex
+ //		throw SQLError.notImplemented();
+ //	}
+ 
++	@Override
++	public <T> T getObject(int parameterIndex, Class<T> type) throws SQLException {
++		throw new SQLFeatureNotSupportedException("Not supported");
++	}
++
++	@Override
++	public <T> T getObject(String parameterName, Class<T> type) throws SQLException {
++		throw new SQLFeatureNotSupportedException("Not supported");
++	}
++
++	@Override
++	public void setBlob(String parameterName, InputStream inputStream) throws SQLException {
++		throw new SQLFeatureNotSupportedException("Not supported");
++	}
++
++	@Override
++	public void setClob(String parameterName, Reader reader) throws SQLException {
++		throw new SQLFeatureNotSupportedException("Not supported");
++	}
++
++	@Override
++	public void setNCharacterStream(String parameterName, Reader value) throws SQLException{
++		throw new SQLFeatureNotSupportedException("Not supported");
++	}
++
++	@Override
++	public void setCharacterStream(String parameterName, java.io.Reader reader) throws SQLException {
++		throw new SQLFeatureNotSupportedException("Not supported");
++	}
++
++	@Override
++	public void setBinaryStream(String parameterName, java.io.InputStream x) throws SQLException {
++    	throw new SQLFeatureNotSupportedException("Not supported");
++	}
++
++	@Override
++	public void setAsciiStream(String parameterName, java.io.InputStream x) throws SQLException {
++		throw new SQLFeatureNotSupportedException("Not supported");
++	}
++
++	@Override
++	public void setCharacterStream(String parameterName, java.io.Reader reader, long length) throws SQLException {
++		throw new SQLFeatureNotSupportedException("Not supported");
++	}
++
++	@Override
++	public void setBinaryStream(String parameterName, java.io.InputStream x, long length) throws SQLException {
++		throw new SQLFeatureNotSupportedException("Not supported");
++	}
++
++	@Override
++	public void setAsciiStream(String parameterName, java.io.InputStream x, long length) throws SQLException {
++		throw new SQLFeatureNotSupportedException("Not supported");
++	}
++
++	@Override
++	public void setClob (String parameterName, Clob x) throws SQLException {
++		throw new SQLFeatureNotSupportedException("Not supported");
++	}
++
++	@Override
++	public void setBlob (String parameterName, Blob x) throws SQLException {
++		throw new SQLFeatureNotSupportedException("Not supported");
++	}
++
++	@Override
++	public java.io.Reader getCharacterStream(String parameterName) throws SQLException {
++		throw new SQLFeatureNotSupportedException("Not supported");
++	}
++
++	@Override
++	public java.io.Reader getCharacterStream(int parameterIndex) throws SQLException {
++		throw new SQLFeatureNotSupportedException("Not supported");
++	}
++
++	@Override
++	public java.io.Reader getNCharacterStream(String parameterName) throws SQLException {
++		throw new SQLFeatureNotSupportedException("Not supported");
++	}
++
++	@Override
++	public java.io.Reader getNCharacterStream(int parameterIndex) throws SQLException {
++		throw new SQLFeatureNotSupportedException("Not supported");
++	}
++
++	@Override
++	public String getNString(String parameterName) throws SQLException {
++		throw new SQLFeatureNotSupportedException("Not supported");
++	}
++
++	@Override
++	public String getNString(int parameterIndex) throws SQLException {
++		throw new SQLFeatureNotSupportedException("Not supported");
++	}
++
++	@Override
++	public SQLXML getSQLXML(String parameterName) throws SQLException {
++		throw new SQLFeatureNotSupportedException("Not supported");
++	}
++
++	@Override
++	public SQLXML getSQLXML(int parameterIndex) throws SQLException {
++		throw new SQLFeatureNotSupportedException("Not supported");
++	}
++
++	@Override
++	public void setSQLXML(String parameterName, SQLXML xmlObject) throws SQLException {
++		throw new SQLFeatureNotSupportedException("Not supported");
++	}
++
++	@Override
++	public NClob getNClob (String parameterName) throws SQLException {
++		throw new SQLFeatureNotSupportedException("Not supported");
++	}
++
++	@Override
++	public NClob getNClob (int parameterIndex) throws SQLException {
++		throw new SQLFeatureNotSupportedException("Not supported");
++	}
++
++	@Override
++	public void setNClob(String parameterName, Reader reader, long length) throws SQLException  {
++		throw new SQLFeatureNotSupportedException("Not supported");
++	}
++
++	@Override
++	public void setBlob(String parameterName, InputStream inputStream, long length)	throws SQLException {
++		throw new SQLFeatureNotSupportedException("Not supported");
++	}
++
++	@Override
++	public void setClob(String parameterName, Reader reader, long length) throws SQLException {
++		throw new SQLFeatureNotSupportedException("Not supported");
++	}
++
++	@Override
++	public void setNClob(String parameterName, NClob value) throws SQLException {
++		throw new SQLFeatureNotSupportedException("Not supported");
++	}
++
++	@Override
++	public void setNCharacterStream(String parameterName, Reader value, long length) throws SQLException {
++		throw new SQLFeatureNotSupportedException("Not supported");
++	}
++
++	@Override
++	public void setNString(String parameterName, String value) throws SQLException {
++		throw new SQLFeatureNotSupportedException("Not supported");
++	}
++
++	@Override
++	public void setRowId(String parameterName, RowId x) throws SQLException  {
++		throw new SQLFeatureNotSupportedException("Not supported");
++	}
++
++	@Override
++	public RowId getRowId(String parameterName) throws SQLException {
++		throw new SQLFeatureNotSupportedException("Not supported");
++	}
++
++	@Override
++	public RowId getRowId(int parameterIndex) throws SQLException {
++		throw new SQLFeatureNotSupportedException("Not supported");
++	}
++
+ }
+diff -up --recursive mysql-connector-java-5.1.28.orig/src/com/mysql/jdbc/jdbc2/optional/ConnectionWrapper.java mysql-connector-java-5.1.28/src/com/mysql/jdbc/jdbc2/optional/ConnectionWrapper.java
+--- mysql-connector-java-5.1.28.orig/src/com/mysql/jdbc/jdbc2/optional/ConnectionWrapper.java	2013-11-28 08:39:32.000000000 +0100
++++ mysql-connector-java-5.1.28/src/com/mysql/jdbc/jdbc2/optional/ConnectionWrapper.java	2014-01-23 15:09:10.978010180 +0100
+@@ -26,8 +26,15 @@
+ package com.mysql.jdbc.jdbc2.optional;
+ 
+ import java.lang.reflect.Constructor;
++import java.sql.Blob;
++import java.sql.Clob;
++import java.sql.NClob;
+ import java.sql.SQLException;
++import java.sql.SQLXML;
+ import java.sql.Savepoint;
++import java.sql.SQLClientInfoException;
++import java.sql.SQLFeatureNotSupportedException;
++import java.sql.Struct;
+ import java.sql.Statement;
+ import java.util.Map;
+ import java.util.Properties;
+@@ -2862,4 +2869,68 @@ public class ConnectionWrapper extends W
+ 	public String getConnectionAttributes() throws SQLException {
+ 		return this.mc.getConnectionAttributes();
  	}
 -}
 \ No newline at end of file
++	@Override
++	public Struct createStruct(String typeName, Object[] attributes) throws SQLException {
++		throw new SQLFeatureNotSupportedException("Not supported");
++	}
++
++	@Override
++	public java.sql.Array createArrayOf(String typeName, Object[] elements) throws SQLException {
++		throw new SQLFeatureNotSupportedException("Not supported");
++	}
++
++	@Override
++	public String getClientInfo(String name) throws SQLException {
++		throw new SQLFeatureNotSupportedException("Not supported");
++	}
++
++	@Override
++	public Properties getClientInfo() throws SQLException {
++		throw new SQLFeatureNotSupportedException("Not supported");
++	}
++	@Override
++	public void setClientInfo(String name, String value) throws SQLClientInfoException {
++		//throw new SQLFeatureNotSupportedException("Not supported");
++	}
++
++	@Override
++	public void setClientInfo(Properties properties) throws SQLClientInfoException {
++		//throw new SQLFeatureNotSupportedException("Not supported");
++	}
++
++	@Override
++	public boolean isValid(int timeout) throws SQLException {
++		throw new SQLFeatureNotSupportedException("Not supported");
++	}
++
++	@Override
++	public SQLXML createSQLXML() throws SQLException {
++		throw new SQLFeatureNotSupportedException("Not supported");
++	}
++
++	@Override
++	public NClob createNClob() throws SQLException {
++		throw new SQLFeatureNotSupportedException("Not supported");
++	}
++
++	@Override
++	public Blob createBlob() throws SQLException {
++		throw new SQLFeatureNotSupportedException("Not supported");
++	}
++
++	@Override
++	public Clob createClob() throws SQLException {
++		throw new SQLFeatureNotSupportedException("Not supported");
++	}
++
++	@Override
++	public boolean isWrapperFor(java.lang.Class<?> iface) throws java.sql.SQLException {
++		throw new SQLFeatureNotSupportedException("Not supported");
++	}
++
++	@Override
++	public <T> T unwrap(java.lang.Class<T> iface) throws java.sql.SQLException {
++		throw new SQLFeatureNotSupportedException("Not supported");
++	}
++
 +}
-diff -up mysql-connector-java-5.1.26/src/testsuite/regression/StatementRegressionTest.java.p0 mysql-connector-java-5.1.26/src/testsuite/regression/StatementRegressionTest.java
---- mysql-connector-java-5.1.26/src/testsuite/regression/StatementRegressionTest.java.p0	2013-07-24 02:07:01.000000000 +0200
-+++ mysql-connector-java-5.1.26/src/testsuite/regression/StatementRegressionTest.java	2013-10-23 10:44:56.711452823 +0200
-@@ -55,6 +55,11 @@ import java.sql.Ref;
+diff -up --recursive mysql-connector-java-5.1.28.orig/src/com/mysql/jdbc/jdbc2/optional/MysqlDataSource.java mysql-connector-java-5.1.28/src/com/mysql/jdbc/jdbc2/optional/MysqlDataSource.java
+--- mysql-connector-java-5.1.28.orig/src/com/mysql/jdbc/jdbc2/optional/MysqlDataSource.java	2013-11-28 08:39:32.000000000 +0100
++++ mysql-connector-java-5.1.28/src/com/mysql/jdbc/jdbc2/optional/MysqlDataSource.java	2014-01-23 15:09:10.979010180 +0100
+@@ -28,8 +28,10 @@ package com.mysql.jdbc.jdbc2.optional;
+ import java.io.PrintWriter;
+ import java.io.Serializable;
+ import java.sql.SQLException;
++import java.sql.SQLFeatureNotSupportedException;
+ import java.util.Iterator;
+ import java.util.Properties;
++import java.util.logging.Logger;
+ 
+ import javax.naming.NamingException;
+ import javax.naming.Reference;
+@@ -450,4 +452,19 @@ public class MysqlDataSource extends Con
+ //	public <T> T unwrap(Class<T> iface) throws SQLException {
+ //		throw SQLError.notImplemented();
+ //	}
++
++	@Override
++	public Logger getParentLogger() throws SQLFeatureNotSupportedException {
++		throw new SQLFeatureNotSupportedException("Not supported");
++	}
++
++	@Override
++	public <T> T unwrap(java.lang.Class<T> iface) throws java.sql.SQLException {
++		throw new SQLFeatureNotSupportedException("Not supported");
++	}
++
++	@Override
++	public boolean isWrapperFor(java.lang.Class<?> iface) throws java.sql.SQLException {
++		throw new SQLFeatureNotSupportedException("Not supported");
++	}
+ }
+diff -up --recursive mysql-connector-java-5.1.28.orig/src/com/mysql/jdbc/jdbc2/optional/MysqlPooledConnection.java mysql-connector-java-5.1.28/src/com/mysql/jdbc/jdbc2/optional/MysqlPooledConnection.java
+--- mysql-connector-java-5.1.28.orig/src/com/mysql/jdbc/jdbc2/optional/MysqlPooledConnection.java	2013-11-28 08:39:32.000000000 +0100
++++ mysql-connector-java-5.1.28/src/com/mysql/jdbc/jdbc2/optional/MysqlPooledConnection.java	2014-01-23 15:09:10.979010180 +0100
+@@ -27,6 +27,7 @@ package com.mysql.jdbc.jdbc2.optional;
+ import java.lang.reflect.Constructor;
+ import java.sql.Connection;
+ import java.sql.SQLException;
++import java.sql.SQLFeatureNotSupportedException;
+ import java.util.HashMap;
+ import java.util.Iterator;
+ import java.util.Map;
+@@ -34,6 +35,7 @@ import java.util.Map;
+ import javax.sql.ConnectionEvent;
+ import javax.sql.ConnectionEventListener;
+ import javax.sql.PooledConnection;
++import javax.sql.StatementEventListener;
+ 
+ import com.mysql.jdbc.ExceptionInterceptor;
+ import com.mysql.jdbc.SQLError;
+@@ -254,4 +256,13 @@ public class MysqlPooledConnection imple
+ 	protected ExceptionInterceptor getExceptionInterceptor() {
+ 		return this.exceptionInterceptor;
+ 	}
+-}
+\ No newline at end of file
++
++	@Override
++	public void addStatementEventListener(StatementEventListener listener) {
++        }
++
++	@Override
++	public void removeStatementEventListener(StatementEventListener listener) {
++        }
++
++}
+diff -up --recursive mysql-connector-java-5.1.28.orig/src/com/mysql/jdbc/jdbc2/optional/PreparedStatementWrapper.java mysql-connector-java-5.1.28/src/com/mysql/jdbc/jdbc2/optional/PreparedStatementWrapper.java
+--- mysql-connector-java-5.1.28.orig/src/com/mysql/jdbc/jdbc2/optional/PreparedStatementWrapper.java	2013-11-28 08:39:32.000000000 +0100
++++ mysql-connector-java-5.1.28/src/com/mysql/jdbc/jdbc2/optional/PreparedStatementWrapper.java	2014-01-23 15:09:10.979010180 +0100
+@@ -34,12 +34,16 @@ import java.sql.Array;
+ import java.sql.Blob;
+ import java.sql.Clob;
+ import java.sql.Date;
++import java.sql.NClob;
+ import java.sql.ParameterMetaData;
+ import java.sql.PreparedStatement;
+ import java.sql.Ref;
+ import java.sql.ResultSet;
+ import java.sql.ResultSetMetaData;
++import java.sql.RowId;
+ import java.sql.SQLException;
++import java.sql.SQLFeatureNotSupportedException;
++import java.sql.SQLXML;
+ import java.sql.Time;
+ import java.sql.Timestamp;
+ import java.util.Calendar;
+@@ -1240,4 +1244,107 @@ public class PreparedStatementWrapper ex
+ //	public Object unwrap(Class arg0) throws SQLException {
+ //		throw SQLError.notImplemented();
+ //	}
++
++	public void setNClob(String parameterName, NClob value) throws SQLException {
++		throw new SQLFeatureNotSupportedException("Not supported");
++	}
++
++	public void setNClob(String parameterName, Reader reader, long length) throws SQLException {
++		throw new SQLFeatureNotSupportedException("Not supported");
++	}
++
++	public void setNClob(String parameterName, Reader reader) throws SQLException {
++		throw new SQLFeatureNotSupportedException("Not supported");
++	}
++
++	@Override
++	public void setNClob(int parameterName, NClob value) throws SQLException {
++		throw new SQLFeatureNotSupportedException("Not supported");
++	}
++
++	@Override
++	public void setNClob(int parameterName, Reader reader, long length) throws SQLException {
++		throw new SQLFeatureNotSupportedException("Not supported");
++	}
++
++	@Override
++	public void setNClob(int parameterName, Reader reader) throws SQLException {
++		throw new SQLFeatureNotSupportedException("Not supported");
++	}
++
++	@Override
++	public void setBlob(int parameterIndex, InputStream inputStream) throws SQLException {
++		throw new SQLFeatureNotSupportedException("Not supported");
++	}
++
++	@Override
++	public void setClob(int parameterIndex, Reader reader) throws SQLException{
++		throw new SQLFeatureNotSupportedException("Not supported");
++	}
++
++	@Override
++	public void setNCharacterStream(int parameterIndex, Reader value) throws SQLException{
++		throw new SQLFeatureNotSupportedException("Not supported");
++	}
++
++	@Override
++	public void setCharacterStream(int parameterIndex, java.io.Reader reader) throws SQLException {
++		throw new SQLFeatureNotSupportedException("Not supported");
++	}
++
++	@Override
++	public void setBinaryStream(int parameterIndex, java.io.InputStream x) throws SQLException {
++		throw new SQLFeatureNotSupportedException("Not supported");
++	}
++
++	@Override
++	public void setAsciiStream(int parameterIndex, java.io.InputStream x) throws SQLException{
++		throw new SQLFeatureNotSupportedException("Not supported");
++	}
++
++	@Override
++	public void setCharacterStream(int parameterIndex, java.io.Reader reader, long length) throws SQLException{
++		throw new SQLFeatureNotSupportedException("Not supported");
++	}
++
++	@Override
++	public void setBinaryStream(int parameterIndex, java.io.InputStream x, long length) throws SQLException {
++		throw new SQLFeatureNotSupportedException("Not supported");
++	}
++
++	@Override
++	public void setAsciiStream(int parameterIndex, java.io.InputStream x, long length) throws SQLException {
++		throw new SQLFeatureNotSupportedException("Not supported");
++	}
++
++	@Override
++	public void setSQLXML(int parameterIndex, SQLXML xmlObject) throws SQLException {
++		throw new SQLFeatureNotSupportedException("Not supported");
++	}
++
++	@Override
++	public void setBlob(int parameterIndex, InputStream inputStream, long length) throws SQLException{
++		throw new SQLFeatureNotSupportedException("Not supported");
++	}
++
++	@Override
++	public void setClob(int parameterIndex, Reader reader, long length) throws SQLException {
++		throw new SQLFeatureNotSupportedException("Not supported");
++	}
++
++	@Override
++	public void setNCharacterStream(int parameterIndex, Reader value, long length) throws SQLException {
++		throw new SQLFeatureNotSupportedException("Not supported");
++	}
++
++	@Override
++	public void setNString(int parameterIndex, String value) throws SQLException{
++		throw new SQLFeatureNotSupportedException("Not supported");
++	}
++
++	@Override
++	public void setRowId(int parameterIndex, RowId x) throws SQLException {
++		throw new SQLFeatureNotSupportedException("Not supported");
++	}
++
+ }
+diff -up --recursive mysql-connector-java-5.1.28.orig/src/com/mysql/jdbc/jdbc2/optional/StatementWrapper.java mysql-connector-java-5.1.28/src/com/mysql/jdbc/jdbc2/optional/StatementWrapper.java
+--- mysql-connector-java-5.1.28.orig/src/com/mysql/jdbc/jdbc2/optional/StatementWrapper.java	2013-11-28 08:39:32.000000000 +0100
++++ mysql-connector-java-5.1.28/src/com/mysql/jdbc/jdbc2/optional/StatementWrapper.java	2014-01-23 15:09:10.979010180 +0100
+@@ -29,6 +29,7 @@ import java.lang.reflect.Constructor;
+ import java.sql.Connection;
+ import java.sql.ResultSet;
+ import java.sql.SQLException;
++import java.sql.SQLFeatureNotSupportedException;
+ import java.sql.SQLWarning;
+ import java.sql.Statement;
+ 
+@@ -866,4 +867,41 @@ public class StatementWrapper extends Wr
+ 			checkAndFireConnectionError(sqlEx);
+ 		}
+ 	}
++
++	@Override
++	public boolean isCloseOnCompletion() throws SQLException {
++		throw new SQLFeatureNotSupportedException("Not supported");
++	}
++
++	@Override
++	public void closeOnCompletion() throws SQLException {
++		throw new SQLFeatureNotSupportedException("Not supported");
++	}
++
++	@Override
++	public boolean isPoolable()  throws SQLException{
++		throw new SQLFeatureNotSupportedException("Not supported");
++	}
++
++	@Override
++	public void setPoolable(boolean poolable) throws SQLException{
++		throw new SQLFeatureNotSupportedException("Not supported");
++	}
++
++	@Override
++	public boolean isClosed() throws SQLException{
++		throw new SQLFeatureNotSupportedException("Not supported");
++	}
++
++	@Override
++	public boolean isWrapperFor(java.lang.Class<?> iface) throws java.sql.SQLException {
++		throw new SQLFeatureNotSupportedException("Not supported");
++	}
++
++	@Override
++	public <T> T unwrap(java.lang.Class<T> iface) throws java.sql.SQLException {
++		throw new SQLFeatureNotSupportedException("Not supported");
++	}
++
++
+ }
+diff -up --recursive mysql-connector-java-5.1.28.orig/src/testsuite/regression/StatementRegressionTest.java mysql-connector-java-5.1.28/src/testsuite/regression/StatementRegressionTest.java
+--- mysql-connector-java-5.1.28.orig/src/testsuite/regression/StatementRegressionTest.java	2013-11-28 08:39:32.000000000 +0100
++++ mysql-connector-java-5.1.28/src/testsuite/regression/StatementRegressionTest.java	2014-01-23 15:09:10.987010179 +0100
+@@ -50,6 +50,11 @@ import java.sql.Ref;
  import java.sql.ResultSet;
  import java.sql.ResultSetMetaData;
  import java.sql.SQLException;
@@ -1649,7 +1634,7 @@ diff -up mysql-connector-java-5.1.26/src/testsuite/regression/StatementRegressio
  import java.sql.SQLWarning;
  import java.sql.Statement;
  import java.sql.Time;
-@@ -2542,7 +2547,8 @@ public class StatementRegressionTest ext
+@@ -2537,7 +2542,8 @@ public class StatementRegressionTest ext
  		try {
  			pStmt = this.conn
  					.prepareStatement("INSERT INTO testNullClob VALUES (?)");
@@ -1659,7 +1644,7 @@ diff -up mysql-connector-java-5.1.26/src/testsuite/regression/StatementRegressio
  			pStmt.executeUpdate();
  		} finally {
  			if (pStmt != null) {
-@@ -5272,6 +5278,276 @@ public class StatementRegressionTest ext
+@@ -5275,6 +5281,271 @@ public class StatementRegressionTest ext
  			public int getBytesSize() throws SQLException {
  				return 0;
  			}
@@ -1895,11 +1880,6 @@ diff -up mysql-connector-java-5.1.26/src/testsuite/regression/StatementRegressio
 +        }
 +
 +	@Override
-+	public boolean isClosed() throws SQLException {
-+                throw new SQLFeatureNotSupportedException("Not supported");
-+        }
-+
-+	@Override
 +	public int getHoldability() throws SQLException {
 +                throw new SQLFeatureNotSupportedException("Not supported");
 +        }
@@ -1936,9 +1916,11 @@ diff -up mysql-connector-java-5.1.26/src/testsuite/regression/StatementRegressio
  		};
  	}
  
-@@ -6906,4 +7182,5 @@ public class StatementRegressionTest ext
+@@ -6909,6 +7180,7 @@ public class StatementRegressionTest ext
  
  	}
  
 +
- }
+ 	/**
+ 	 * WL#4897 - Add EXPLAIN INSERT/UPDATE/DELETE
+ 	 * 
