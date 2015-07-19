@@ -8,7 +8,7 @@
 Summary:    Official JDBC driver for MySQL
 Name:       mysql-connector-java
 Version:    5.1.28
-Release:    4.1
+Release:    4.2
 Group:      Databases
 Epoch:      1 
 
