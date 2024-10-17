@@ -15,7 +15,7 @@ Epoch:      1
 # MySQL FLOSS Exception
 License:    GPLv2 with exceptions
 
-URL:        http://dev.mysql.com/downloads/connector/j/
+URL:        https://dev.mysql.com/downloads/connector/j/
 
 # Mysql has a mirror redirector for its downloads
 # You can get this tarball by following a link from:
